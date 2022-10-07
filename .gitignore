@@ -1,0 +1,17 @@
+node_modules/
+cypress/screenshots
+cypress/videos
+cypress/downloads
+mochawesome-report/
+cypress/snapshots/**/__diff_output__
+clearDataDebug/
+dataGenDebug/
+cypress/fixtures/users.json
+mochawesome-report.html
+.env
+results/
+cypress/parallel-weights.json
+package-lock.json
+
+.idea/
+cypress/fixtures/dynamic/

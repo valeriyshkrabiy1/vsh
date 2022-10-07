@@ -1,0 +1,30 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cypress-io/cypress/develop/cli/schema/cypress.schema.json",
+  "baseUrl": "https://glassboxdigital.com",
+  "defaultCommandTimeout": 10000,
+  "requestTimeout": 10000,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "reporterEnabled": "mocha-junit-reporter,cypress-mochawesome-reporter,@reportportal/agent-js-cypress",
+    "mochaJunitReporterReporterOptions": {
+      "mochaFile": "results/mocha-junit/results-[hash].xml",
+      "outputs": true,
+      "includePending": true
+    },
+    "cypressMochawesomeReporterReporterOptions": {
+      "reportDir": "results/mochawesome-report",
+      "charts": true,
+      "overwrite": true,
+      "html": true,
+      "json": true
+    }
+  },
+  "retries": {
+    "runMode": 1,
+    "openMode": 0
+  },
+  "experimentalStudio": true,
+  "viewportWidth": 1280,
+  "viewportHeight": 900,
+  "video": false
+}

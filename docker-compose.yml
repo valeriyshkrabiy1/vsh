@@ -1,0 +1,27 @@
+version: '3.0'
+
+services:
+  cypress:
+    command:
+      - '/bin/bash'
+      - -c
+      - |
+        [ -d ./results/mochawesome-report ] && rm -rf ./results/mochawesome-report
+        ./node_modules/.bin/cypress $${CYPRESS_COMMAND} --spec $${SPECS} --env domain=$${DOMAIN},port=$${GB_PORT},subscriptionType=$${GB_SUBSCRIPTION}
+    image: registry.glassboxrnd.com/gb_ui_automation:${TAG:-latest}
+    environment:
+      DOMAIN: ${DOMAIN:-eplus.glassboxrnd.com}
+      CYPRESS_COMMAND: ${CYPRESS_COMMAND:-run}
+      SPECS: ${SPECS:-'./cypress/integration/**/*'}
+      GB_PORT: ${GB_PORT:-8443}
+      GB_SUBSCRIPTION: ${GB_SUBSCRIPTION:-optimize}
+      ELECTRON_ENABLE_LOGGING: ${ELECTRON_ENABLE_LOGGING:-0}
+    volumes:
+      - ./cypress/integration:/e2e/cypress/integration
+      - ./cypress/screenshots:/e2e/cypress/screenshots
+      - ./cypress/videos:/e2e/cypress/videos
+      - ./results:/e2e/results
+    working_dir: '/e2e'
+    stdin_open: true
+    tty: true
+  

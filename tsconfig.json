@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "noEmit": true,
+    "target": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "baseUrl": "cypress/node_modules",
+    "types": [
+      "cypress"
+    ]
+  },
+  "include": [
+    "**/*.*"
+  ]
+}

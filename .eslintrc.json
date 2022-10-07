@@ -1,0 +1,31 @@
+{
+  "extends": ["airbnb-base", "plugin:mocha/recommended"],
+  "parserOptions": {
+    "ecmaVersion": 2022
+  },
+  "plugins": [
+    "cypress",
+    "mocha",
+    "chai-friendly",
+    "no-only-tests"
+  ],
+  "env": {
+    "cypress/globals": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "linebreak-style": ["warn", "windows"],
+    "max-len": "off",
+    "comma-dangle": "off",
+    "no-unused-expressions": "off",
+    "spaced-comment": ["error", "always", { "markers": ["/ <reference", "//"] }],
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "class-methods-use-this": ["error", { "enforceForClassFields": false }],
+    "chai-friendly/no-unused-expressions": "error",
+    "no-plusplus": ["error", {"allowForLoopAfterthoughts": true}],
+    "no-only-tests/no-only-tests": ["warn"],
+    "mocha/no-mocha-arrows": "off",
+    "mocha/no-exclusive-tests": "off"
+  }
+}
