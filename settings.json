@@ -1,0 +1,10 @@
+{
+    "editor.tabSize": 2,
+    "eslint.autoFixOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "workbench.colorCustomizations": {
+        "editorInfo.foreground": "#268ad200"
+    }
+}
